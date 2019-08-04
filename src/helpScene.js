@@ -5,7 +5,7 @@ import { CONTENT } from "./intl.js";
 const PADDING = 40,
     BUTTON_HEIGHT = 40,
     PARAGRAPH_TOP = -120,
-    LINE_X = bounds.left + 50,
+    LINE_X = -110,
     LINE_GAP = 15;
 
 export const helpScene = engine.createScene({
