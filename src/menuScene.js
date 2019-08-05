@@ -18,7 +18,7 @@ titleStrokeStyle.addColorStop(1, '#90C');
 menuScene.attach(
     new Text({
         content: CONTENT.TITLE,
-        position: Vector.of(0, -130),
+        position: Vector.of(0, -140),
         style: {
             font: '48px Consolas',
             fillStyle: '#0FF',
@@ -46,7 +46,7 @@ menuScene.attach(hiText).on('enter', () => {
     hiText.content = CONTENT.HI_PREFIX + query(STORAGE_KEYS.HI);
 });
 
-const BUTTON_TOP = 40,
+const BUTTON_TOP = 50,
     BUTTON_WIDTH = 120,
     BUTTON_HEIGHT = 40,
     BUTTON_GAP = 20,
@@ -92,27 +92,38 @@ menuScene.attach(
         })
 );
 
-const FOOTER_BOTTOM = bounds.bottom - 30;
+const LINK_WIDTH = 40,
+    LINK_HEIGHT = 30;
 
 menuScene.attach(
-    new Text({
-        content: 'by 3h',
-        position: Vector.of(0, FOOTER_BOTTOM),
+    new Rectangle({
+        interactive: true,
+        position: Vector.of(bounds.right - 35, bounds.bottom - 25),
+        width: LINK_WIDTH,
+        height: LINK_HEIGHT,
         style: {
-            font: 'bold 20px Consolas',
-            fillStyle: '#0CF',
             strokeStyle: null,
-            lineJoin: 'round',
-            shadowColor: '#024',
-            shadowOffsetY: 1,
         },
+        attachments: [new Text({
+            content: 'GH',
+            style: {
+                font: 'bold 20px Consolas',
+                fillStyle: '#CCC',
+                strokeStyle: null,
+                lineJoin: 'round',
+                shadowColor: '#000',
+                shadowOffsetY: 2,
+            },
+        })],
+    }).on('click', () => {
+        window.open('https://github.com/huang2002/geo-jump');
     })
 );
 
 menuScene.attach(
     new Rectangle({
         interactive: true,
-        position: Vector.of(bounds.left + 40, FOOTER_BOTTOM),
+        position: Vector.of(bounds.left + 40, bounds.bottom - 30),
         width: 50,
         height: 30,
         radius: 5,
