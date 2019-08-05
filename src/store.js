@@ -4,6 +4,8 @@ export const STORAGE_KEYS = {
     HI: 'hi',
     LANG: 'lang',
     COINS: 'coins',
+    PAID: 'paid',
+    CHARACTER: 'character',
 };
 
 const LOCALSTORAGE_NAME = 'geo-jump-store',
@@ -11,6 +13,8 @@ const LOCALSTORAGE_NAME = 'geo-jump-store',
         [STORAGE_KEYS.HI]: 0,
         [STORAGE_KEYS.LANG]: LANGUAGES.EN,
         [STORAGE_KEYS.COINS]: 0,
+        [STORAGE_KEYS.PAID]: [0],
+        [STORAGE_KEYS.CHARACTER]: 0,
     };
 
 /** @param {object} value */

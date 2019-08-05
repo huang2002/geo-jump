@@ -15,7 +15,14 @@ export const resetScore = () => {
     score = 0;
 };
 
-export let player = CHARACTERS[query(STORAGE_KEYS.CHARACTER)].shape;
+let player = CHARACTERS[query(STORAGE_KEYS.CHARACTER)].shape;
+
+export const getPlayer = () => player;
+
+/** @param {typeof player} character */
+export const setPlayer = character => {
+    player = character;
+};
 
 export const resetPlayer = () => {
     player.activate();

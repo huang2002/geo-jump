@@ -3,7 +3,7 @@ import {
     SCENE_BACKGROUND, Utils
 } from "./common.js";
 import { shapes, resetShapes, updateShapes } from "./shapes.js";
-import { player, resetPlayer, getScore, updateScore, resetScore } from "./player.js";
+import { resetPlayer, getScore, updateScore, resetScore, getPlayer } from "./player.js";
 import { createBomb } from "./bombs.js";
 import { menuScene } from "./menuScene.js";
 import { STORAGE_KEYS, query, update } from "./store.js";
@@ -19,7 +19,15 @@ export const mainScene = engine.createScene({
     camera,
 });
 
-mainScene.add(player);
+/** @type {ReturnType<typeof getPlayer>} */
+let player;
+
+mainScene.on('enter', () => {
+    player = getPlayer();
+    mainScene.objects.unshift(player);
+}).on('exit', () => {
+    mainScene.remove(player);
+});
 
 shapes.forEach(shape => {
     mainScene.add(shape);

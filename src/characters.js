@@ -27,7 +27,7 @@ export const CHARACTERS = [
             radius: SIZE,
             style: {
                 ...COMMON_STYLE,
-                strokeStyle: '#0CF',
+                strokeStyle: '#F90',
             },
         }),
     },
@@ -40,7 +40,7 @@ export const CHARACTERS = [
             radius: 15,
             style: {
                 ...COMMON_STYLE,
-                strokeStyle: '#0CF',
+                strokeStyle: '#F66',
             },
         }),
     },
@@ -51,7 +51,7 @@ export const CHARACTERS = [
             vertices: HE.Vertices.createPolygon(8, SIZE, Math.PI / 8),
             style: {
                 ...COMMON_STYLE,
-                strokeStyle: '#0CF',
+                strokeStyle: '#0F6',
             },
         }),
     },

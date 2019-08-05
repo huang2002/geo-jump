@@ -1,6 +1,6 @@
 import { BOMB_CATEGORY, SHAPE_CATEGORY, bounds, Vector } from "./common.js";
 import { createParticles } from "./particles.js";
-import { player } from "./player.js";
+import { getPlayer } from "./player.js";
 
 const SPEED = 30,
     SIZE = 10,
@@ -26,7 +26,8 @@ const bombPool = new HE.Pool(HE.Rectangle, {
  * @param {Vector} direction
  */
 export const createBomb = (scene, position, direction) => {
-    const bomb = bombPool.get();
+    const bomb = bombPool.get(),
+        player = getPlayer();
     bomb.moveToVector(position);
     bomb.velocity.setVector(direction)
         .setNorm(SPEED)
