@@ -1,4 +1,5 @@
-import { PLAYER_CATEGORY, MAIN_SCENE_LINE_WIDTH, FRICTION, STATIC_FRICTION, ELASTICITY, MAIN_SCENE_SHADOW_COLOR } from "./common.js";
+import { CHARACTERS } from "./characters.js";
+import { query, STORAGE_KEYS } from "./store.js";
 
 export const INIT_Y = -80,
     SCORE_SCALE = .05;
@@ -9,28 +10,12 @@ export const getScore = () => score;
 
 /** @param {number} distance */
 export const updateScore = distance => score = Math.max(score, Math.round(distance * SCORE_SCALE));
-;
 
 export const resetScore = () => {
     score = 0;
 };
 
-export const player = new HE.Circle({
-    category: PLAYER_CATEGORY,
-    active: true,
-    radius: 20,
-    elasticity: ELASTICITY,
-    friction: FRICTION,
-    staticFriction: STATIC_FRICTION,
-    maxSpeed: 80,
-    fillFirst: false,
-    style: {
-        strokeStyle: '#0CF',
-        lineWidth: MAIN_SCENE_LINE_WIDTH,
-        shadowColor: MAIN_SCENE_SHADOW_COLOR,
-        shadowOffsetY: MAIN_SCENE_LINE_WIDTH,
-    },
-});
+export let player = CHARACTERS[query(STORAGE_KEYS.CHARACTER)];
 
 export const resetPlayer = () => {
     player.activate();
