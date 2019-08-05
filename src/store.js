@@ -3,12 +3,14 @@ import { LANGUAGES } from "./common.js";
 export const STORAGE_KEYS = {
     HI: 'hi',
     LANG: 'lang',
+    COINS: 'coins',
 };
 
 const LOCALSTORAGE_NAME = 'geo-jump-store',
     DEFAULTS = {
         [STORAGE_KEYS.HI]: 0,
         [STORAGE_KEYS.LANG]: LANGUAGES.EN,
+        [STORAGE_KEYS.COINS]: 0,
     };
 
 /** @param {object} value */

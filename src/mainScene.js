@@ -26,29 +26,23 @@ shapes.forEach(shape => {
 });
 
 const scoreText = new Text({
-    content: CONTENT.SCORE_PREFIX + '???',
     position: Vector.of(0, bounds.top + 30),
     style: {
         font: 'bold 24px Consolas',
         strokeStyle: null,
         fillStyle: '#0FC',
         textBaseline: 'top',
-        // shadowColor: '#209',
-        // shadowOffsetY: 2,
     },
 });
 mainScene.attach(scoreText);
 
 const hiText = new Text({
-    content: CONTENT.HI_PREFIX + '???',
     position: Vector.of(0, bounds.top + 60),
     style: {
         font: 'bold 24px Consolas',
         strokeStyle: null,
         fillStyle: '#0CF',
         textBaseline: 'top',
-        // shadowColor: '#009',
-        // shadowOffsetY: 2,
     },
 });
 mainScene.attach(hiText);
@@ -80,9 +74,22 @@ const endButton = new Rectangle({
     engine.enter(menuScene);
 });
 
+const gainText = new Text({
+    position: Vector.of(0, -5),
+    style: {
+        font: 'bold 16px Consolas',
+        strokeStyle: null,
+        fillStyle: '#F90',
+        textBaseline: 'top',
+        shadowColor: '#000',
+        shadowOffsetY: 2,
+    },
+});
+
 mainScene.on('enter', () => {
     mainScene.fps = FPS_HI;
     mainScene.detach(endButton);
+    mainScene.detach(gainText);
     mainScene.effects.forEach(effect => {
         if (effect instanceof HE.Transition) {
             effect.finish();
@@ -108,12 +115,16 @@ mainScene.on('enter', () => {
         player.activate(false);
         mainScene.fps = FPS_LO;
         endButton.moveTo(player.position.x, endButton.position.y);
+        gainText.position.x = player.position.x;
         mainScene.attach(endButton);
+        mainScene.attach(gainText);
         const score = getScore(),
             record = query(STORAGE_KEYS.HI);
         if (score > record) {
             update(STORAGE_KEYS.HI, score);
         }
+        gainText.content = CONTENT.GAIN + score;
+        update(STORAGE_KEYS.COINS, query(STORAGE_KEYS.COINS) + score);
     }
 });
 

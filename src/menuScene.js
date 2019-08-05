@@ -33,9 +33,9 @@ menuScene.attach(
 
 const hiText = new Text({
     content: CONTENT.HI_PREFIX + '???',
-    position: Vector.of(0, -50),
+    position: Vector.of(0, -80),
     style: {
-        font: 'bold 25px Consolas',
+        font: 'bold 22px Consolas',
         fillStyle: '#0CF',
         strokeStyle: null,
         shadowColor: '#003',
@@ -46,7 +46,22 @@ menuScene.attach(hiText).on('enter', () => {
     hiText.content = CONTENT.HI_PREFIX + query(STORAGE_KEYS.HI);
 });
 
-const BUTTON_TOP = 50,
+const coinsText = new Text({
+    content: CONTENT.COINS_PREFIX + '???',
+    position: Vector.of(0, -50),
+    style: {
+        font: 'bold 22px Consolas',
+        fillStyle: '#0CF',
+        strokeStyle: null,
+        shadowColor: '#003',
+        shadowOffsetY: 2,
+    },
+});
+menuScene.attach(coinsText).on('enter', () => {
+    coinsText.content = CONTENT.COINS_PREFIX + query(STORAGE_KEYS.COINS);
+});
+
+const BUTTON_TOP = 20,
     BUTTON_WIDTH = 120,
     BUTTON_HEIGHT = 40,
     BUTTON_GAP = 20,

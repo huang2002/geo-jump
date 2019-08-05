@@ -5,11 +5,13 @@ const CONTENT_MAP = {
     [LANGUAGES.EN]: {
         TITLE: 'GEO JUMP',
         HI_PREFIX: 'HI: ',
+        COINS_PREFIX: 'COINS: ',
         START: 'START',
         HELP: 'HELP',
         TOGGLE_LANG: '中文',
         SCORE_PREFIX: 'SCORE: ',
         CONTINUE: 'CONTINUE',
+        GAIN: 'gain coins: ',
         BACK: 'BACK',
         HELP_PARAGRAPH: [
             'Click screen to emit ',
@@ -25,11 +27,13 @@ const CONTENT_MAP = {
     [LANGUAGES.CN]: {
         TITLE: '几何弹跳',
         HI_PREFIX: '最高：',
+        COINS_PREFIX: '硬币：',
         START: '开始',
         HELP: '帮助',
         TOGGLE_LANG: 'ENG',
         SCORE_PREFIX: '分数：',
         CONTINUE: '继续',
+        GAIN: '获得硬币：',
         BACK: '返回',
         HELP_PARAGRAPH: [
             '',
