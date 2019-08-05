@@ -13,7 +13,7 @@ export const shopScene = engine.createScene({
 shopScene.attach(
     new Text({
         content: CONTENT.SHOP,
-        position: Vector.of(0, bounds.top + 40),
+        position: Vector.of(0, bounds.top + 30),
         style: {
             font: 'bold 40px Consolas',
             textBaseline: 'top',
@@ -24,6 +24,24 @@ shopScene.attach(
         },
     })
 );
+
+const coinsText = new Text({
+    content: CONTENT.COINS_PREFIX + '???',
+    position: Vector.of(0, bounds.top + 100),
+    style: {
+        font: 'bold 20px Consolas',
+        fillStyle: '#FF0',
+        strokeStyle: null,
+        shadowColor: '#330',
+        shadowOffsetY: 2,
+    },
+});
+
+const updateCoins = () => {
+    coinsText.content = CONTENT.COINS_PREFIX + query(STORAGE_KEYS.COINS);
+};
+
+shopScene.attach(coinsText).on('enter', updateCoins);
 
 const COMMON_ITEM_BUTTON_OPTIONS = {
     interactive: true,
@@ -56,6 +74,7 @@ const itemButtons = CHARACTERS.map((character, i) => {
                 update(STORAGE_KEYS.COINS, coins - character.price);
                 update(STORAGE_KEYS.PAID, query(STORAGE_KEYS.PAID).concat(i));
                 updateButtons();
+                updateCoins();
             }
         } else if (text.content === CONTENT.USE) {
             update(STORAGE_KEYS.CHARACTER, i);
@@ -84,7 +103,7 @@ const ITEM_COUNT_PER_ROW = 2,
     ITEM_OFFSET_X = 140,
     ITEM_OFFSET_Y = 130,
     ITEMS_LEFT = -ITEM_OFFSET_X * (ITEM_COUNT_PER_ROW - 1) / 2,
-    ITEMS_TOP = -100,
+    ITEMS_TOP = -80,
     ITEM_LAYER_SIZE = SIZE * 2 + 15,
     ITEM_BUTTON_OFFSET = SIZE + 30;
 let itemX = ITEMS_LEFT,
