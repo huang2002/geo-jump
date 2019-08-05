@@ -5,6 +5,7 @@ import { createBomb } from "./bombs.js";
 import { query, STORAGE_KEYS } from "./store.js";
 import { helpScene } from "./helpScene.js";
 import { CONTENT, toggleLang } from "./intl.js";
+import { shopScene } from "./shopScene.js";
 
 export const menuScene = engine.createScene({
     background: SCENE_BACKGROUND,
@@ -101,7 +102,12 @@ menuScene.attach(
             engine.enter(mainScene);
         })
 ).attach(
-    createButton(CONTENT.HELP, '#FC0', '#631')
+    createButton(CONTENT.SHOP, '#FC0', '#631')
+        .on('click', () => {
+            engine.enter(shopScene);
+        })
+).attach(
+    createButton(CONTENT.HELP, '#0F0', '#030')
         .on('click', () => {
             engine.enter(helpScene);
         })
@@ -119,17 +125,19 @@ menuScene.attach(
         style: {
             strokeStyle: null,
         },
-        attachments: [new Text({
-            content: 'GH',
-            style: {
-                font: 'bold 20px Consolas',
-                fillStyle: '#CCC',
-                strokeStyle: null,
-                lineJoin: 'round',
-                shadowColor: '#000',
-                shadowOffsetY: 2,
-            },
-        })],
+        attachments: [
+            new Text({
+                content: 'GH',
+                style: {
+                    font: 'bold 20px Consolas',
+                    fillStyle: '#CCC',
+                    strokeStyle: null,
+                    lineJoin: 'round',
+                    shadowColor: '#000',
+                    shadowOffsetY: 2,
+                },
+            })
+        ],
     }).on('click', () => {
         window.open('https://github.com/huang2002/geo-jump');
     })
@@ -148,17 +156,19 @@ menuScene.attach(
             shadowColor: '#000',
             shadowOffsetY: 2,
         },
-        attachments: [new Text({
-            content: CONTENT.TOGGLE_LANG,
-            style: {
-                font: 'bold 12px Consolas',
-                fillStyle: '#999',
-                strokeStyle: null,
-                lineJoin: 'round',
-                shadowColor: '#000',
-                shadowOffsetY: 2,
-            },
-        })],
+        attachments: [
+            new Text({
+                content: CONTENT.TOGGLE_LANG,
+                style: {
+                    font: 'bold 12px Consolas',
+                    fillStyle: '#999',
+                    strokeStyle: null,
+                    lineJoin: 'round',
+                    shadowColor: '#000',
+                    shadowOffsetY: 2,
+                },
+            })
+        ],
     }).on('click', toggleLang)
 );
 

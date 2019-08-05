@@ -60,16 +60,18 @@ const endButton = new Rectangle({
         shadowColor: '#000',
         shadowOffsetY: 4,
     },
-    attachments: [new Text({
-        content: CONTENT.CONTINUE,
-        style: {
-            font: 'bold 18px Consolas',
-            strokeStyle: null,
-            fillStyle: '#0FF',
-            shadowColor: '#000',
-            shadowOffsetY: 2,
-        },
-    })],
+    attachments: [
+        new Text({
+            content: CONTENT.CONTINUE,
+            style: {
+                font: 'bold 18px Consolas',
+                strokeStyle: null,
+                fillStyle: '#0FF',
+                shadowColor: '#000',
+                shadowOffsetY: 2,
+            },
+        })
+    ],
 }).on('click', () => {
     engine.enter(menuScene);
 });

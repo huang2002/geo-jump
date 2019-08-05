@@ -48,16 +48,18 @@ export const helpScene = engine.createScene({
                 shadowColor: '#111',
                 shadowOffsetY: 4,
             },
-            attachments: [new Text({
-                content: CONTENT.BACK,
-                style: {
-                    font: 'bold 20px Consolas',
-                    strokeStyle: null,
-                    fillStyle: '#FC0',
-                    shadowColor: '#310',
-                    shadowOffsetY: 3,
-                },
-            })],
+            attachments: [
+                new Text({
+                    content: CONTENT.BACK,
+                    style: {
+                        font: 'bold 20px Consolas',
+                        strokeStyle: null,
+                        fillStyle: '#FC0',
+                        shadowColor: '#310',
+                        shadowOffsetY: 3,
+                    },
+                })
+            ],
         }).on('click', () => {
             engine.enter(menuScene);
         }),
