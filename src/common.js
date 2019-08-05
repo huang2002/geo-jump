@@ -3,7 +3,7 @@ export const { Text, Vector, Rectangle, Utils } = HE;
 export const renderer = new HE.Renderer({
     width: 320,
     height: 480,
-    // sizing: HE.Sizing.Fixed,
+    sizing: HE.Sizing.Fixed,
     margin: 0,
 });
 
