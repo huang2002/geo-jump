@@ -13,9 +13,3 @@ body {
     height: 100%;
     background: #333;
 }
-
-canvas {
-    box-sizing: border-box;
-    border: solid 1px #000;
-    box-shadow: 0 0 10px #000;
-}
