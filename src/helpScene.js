@@ -3,10 +3,7 @@ import { menuScene } from "./menuScene.js";
 import { CONTENT } from "./intl.js";
 
 const PADDING = 40,
-    BUTTON_HEIGHT = 40,
-    PARAGRAPH_TOP = -120,
-    LINE_X = -110,
-    LINE_GAP = 15;
+    BUTTON_HEIGHT = 40;
 
 export const helpScene = engine.createScene({
     background: SCENE_BACKGROUND,
@@ -26,28 +23,14 @@ export const helpScene = engine.createScene({
             },
         }),
 
-        new HE.Line({
-            start: Vector.of(LINE_X, PARAGRAPH_TOP),
-            end: Vector.of(LINE_X, 70),
-            style: {
-                strokeStyle: '#0F0',
-                lineWidth: 4,
-                shadowColor: '#030',
-                shadowOffsetX: 1,
-                shadowOffsetY: 2,
-            },
-        }),
-
         new HE.Paragraph({
-            position: Vector.of(LINE_X + LINE_GAP, PARAGRAPH_TOP),
-            lineHeight: 25,
+            position: Vector.of(0, -120),
+            lineHeight: 30,
             lines: CONTENT.HELP_PARAGRAPH,
             style: {
-                font: '16px Consolas',
+                font: '18px Consolas',
                 strokeStyle: null,
                 fillStyle: '#0CF',
-                textAlign: 'left',
-                textBaseline: 'top',
                 shadowColor: '#013',
                 shadowOffsetY: 2,
             },
