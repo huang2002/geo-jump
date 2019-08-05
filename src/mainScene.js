@@ -84,12 +84,11 @@ const endButton = new Rectangle({
 });
 
 const gainText = new Text({
-    position: Vector.of(0, -5),
+    position: Vector.of(0, -110),
     style: {
-        font: 'bold 16px Consolas',
+        font: 'bold 20px Consolas',
         strokeStyle: null,
         fillStyle: '#F90',
-        textBaseline: 'top',
         shadowColor: '#000',
         shadowOffsetY: 2,
     },
