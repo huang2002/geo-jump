@@ -43,10 +43,10 @@ export const helpScene = engine.createScene({
             height: BUTTON_HEIGHT,
             radius: 6,
             style: {
-                strokeStyle: '#999',
+                strokeStyle: '#090',
                 lineWidth: 3,
-                shadowColor: '#111',
-                shadowOffsetY: 4,
+                shadowColor: '#030',
+                shadowOffsetY: 2,
             },
             attachments: [
                 new Text({
@@ -54,9 +54,9 @@ export const helpScene = engine.createScene({
                     style: {
                         font: 'bold 20px Consolas',
                         strokeStyle: null,
-                        fillStyle: '#FC0',
-                        shadowColor: '#310',
-                        shadowOffsetY: 3,
+                        fillStyle: '#0F0',
+                        shadowColor: '#030',
+                        shadowOffsetY: 2,
                     },
                 })
             ],

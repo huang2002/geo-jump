@@ -54,11 +54,10 @@ const endButton = new Rectangle({
     height: 40,
     radius: 6,
     style: {
-        fillStyle: '#333',
-        strokeStyle: '#999',
+        strokeStyle: '#090',
         lineWidth: 3,
         shadowColor: '#000',
-        shadowOffsetY: 4,
+        shadowOffsetY: 2,
     },
     attachments: [
         new Text({
@@ -66,7 +65,7 @@ const endButton = new Rectangle({
             style: {
                 font: 'bold 18px Consolas',
                 strokeStyle: null,
-                fillStyle: '#0FF',
+                fillStyle: '#0D0',
                 shadowColor: '#000',
                 shadowOffsetY: 2,
             },
