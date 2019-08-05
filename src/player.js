@@ -15,7 +15,7 @@ export const resetScore = () => {
     score = 0;
 };
 
-export let player = CHARACTERS[query(STORAGE_KEYS.CHARACTER)];
+export let player = CHARACTERS[query(STORAGE_KEYS.CHARACTER)].shape;
 
 export const resetPlayer = () => {
     player.activate();
