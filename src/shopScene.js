@@ -18,7 +18,7 @@ shopScene.attach(
             font: 'bold 40px Consolas',
             textBaseline: 'top',
             strokeStyle: null,
-            fillStyle: '#F60',
+            fillStyle: '#F30',
             shadowColor: '#310',
             shadowOffsetY: 3,
         },
@@ -138,9 +138,9 @@ shopScene.attach(
         height: 40,
         radius: 6,
         style: {
-            strokeStyle: '#CB0',
+            strokeStyle: '#069',
             lineWidth: 3,
-            shadowColor: '#320',
+            shadowColor: '#013',
             shadowOffsetY: 4,
         },
         attachments: [
@@ -149,8 +149,8 @@ shopScene.attach(
                 style: {
                     font: 'bold 20px Consolas',
                     strokeStyle: null,
-                    fillStyle: '#FC0',
-                    shadowColor: '#310',
+                    fillStyle: '#09F',
+                    shadowColor: '#013',
                     shadowOffsetY: 3,
                 },
             })
