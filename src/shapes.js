@@ -9,8 +9,8 @@ const COUNT = 3,
     MIN_HEIGHT = 60,
     MAX_HEIGHT = 150,
     MIN_GAP = 15,
-    MAX_GAP = 70,
-    MIN_Y = 20,
+    MAX_GAP = 60,
+    MIN_Y = 30,
     MAX_Y = 100;
 
 /** @type {HE.ShapeOptions} */
