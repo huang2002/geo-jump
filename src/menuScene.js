@@ -151,7 +151,7 @@ menuScene.attach(
         height: 30,
         radius: 5,
         style: {
-            strokeStyle: '#666',
+            strokeStyle: '#999',
             lineWidth: 2,
             shadowColor: '#000',
             shadowOffsetY: 2,
@@ -161,7 +161,7 @@ menuScene.attach(
                 content: CONTENT.TOGGLE_LANG,
                 style: {
                     font: 'bold 12px Consolas',
-                    fillStyle: '#999',
+                    fillStyle: '#CCC',
                     strokeStyle: null,
                     lineJoin: 'round',
                     shadowColor: '#000',
