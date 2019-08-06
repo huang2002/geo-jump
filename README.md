@@ -4,7 +4,9 @@
 
 ## Introduction
 
-Just try it: [geo-jump.hhhjs.now.sh](https://geo-jump.hhhjs.now.sh/)
+This is a geometric jumping game developed using [`hengine`](https://github.com/huang2002/hengine).
+
+Just try it online: [geo-jump.hhhjs.now.sh](https://geo-jump.hhhjs.now.sh/)
 
 ## License
 
