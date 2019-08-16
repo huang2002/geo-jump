@@ -1,6 +1,10 @@
 {
     "name": "geo-jump",
     "version": "0.1.0",
+    "description": "A geometric jumping game",
+    "repository": "huang2002/geo-jump",
+    "license": "MIT",
+    "private": true,
     "scripts": {
         "start": "3h-serve dist -p 8080",
         "test": "node test/server",
