@@ -32,9 +32,14 @@ export const createBomb = (scene, position, direction) => {
     bomb.velocity.setVector(direction)
         .setNorm(SPEED)
         .plusVector(player.velocity);
-    bomb.on('collision', target => {
-        createParticles(scene, bomb.position);
+    const clear = () => {
+        bomb.off('collision', onCollision);
+        bomb.off('didUpdate', onDidUpdate)
         scene.remove(bomb);
+        bombPool.add(bomb);
+    }, onCollision = () => {
+        createParticles(scene, bomb.position);
+        clear();
         const deltaVector = Vector.minus(player.position, bomb.position);
         player.velocity.plusVector(
             deltaVector.setNorm(
@@ -44,11 +49,12 @@ export const createBomb = (scene, position, direction) => {
                 )
             )
         );
-    }).on('didUpdate', () => {
+    }, onDidUpdate = () => {
         if (bomb.bounds.top > bounds.bottom) {
-            scene.remove(bomb);
+            clear();
         }
-    });
+    };
+    bomb.on('collision', onCollision)
+        .on('didUpdate', onDidUpdate);
     scene.add(bomb);
 };
-
