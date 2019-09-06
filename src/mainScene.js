@@ -3,7 +3,7 @@ import {
     SCENE_BACKGROUND, Utils
 } from "./common.js";
 import { shapes, resetShapes, updateShapes } from "./shapes.js";
-import { resetPlayer, getScore, updateScore, resetScore, getPlayer } from "./player.js";
+import { resetPlayer, getScore, updateScore, resetScoreAndBonus, getPlayer } from "./player.js";
 import { createBomb } from "./bombs.js";
 import { menuScene } from "./menuScene.js";
 import { STORAGE_KEYS, query, update } from "./store.js";
@@ -24,6 +24,8 @@ let player;
 
 mainScene.on('enter', () => {
     player = getPlayer();
+    // @ts-ignore
+    mainScene.objects = mainScene.objects.filter(object => object.tag !== 'coin');
     mainScene.objects.unshift(player);
 }).on('exit', () => {
     mainScene.remove(player);
@@ -105,15 +107,16 @@ mainScene.on('enter', () => {
     });
     resetShapes();
     resetPlayer();
-    resetScore();
+    resetScoreAndBonus();
 }).on('didUpdate', () => {
     if (player.bounds.top < bounds.bottom) {
         const { x } = player.position;
-        const score = updateScore(
+        updateScore(
             camera.position.x =
             hiText.position.x =
             scoreText.position.x = x
         );
+        const score = getScore();
         scoreText.content = CONTENT.SCORE_PREFIX + score;
         hiText.content = CONTENT.HI_PREFIX + Math.max(query(STORAGE_KEYS.HI), score);
         if (player.bounds.left >= shapes[1].position.x) {

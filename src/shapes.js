@@ -2,6 +2,7 @@ import {
     SHAPE_CATEGORY, PLAYER_CATEGORY, BOMB_CATEGORY, MAIN_SCENE_LINE_WIDTH,
     Rectangle, getRandomColor, Utils, FRICTION, STATIC_FRICTION, ELASTICITY, MAIN_SCENE_SHADOW_COLOR
 } from "./common.js";
+import { addCoin } from "./coins.js";
 
 const COUNT = 3,
     MIN_WIDTH = 90,
@@ -11,7 +12,9 @@ const COUNT = 3,
     MIN_GAP = 15,
     MAX_GAP = 60,
     MIN_Y = 30,
-    MAX_Y = 100;
+    MAX_Y = 100,
+    COIN_OFFSET_Y = -50,
+    COIN_RATE = .25;
 
 /** @type {HE.ShapeOptions} */
 const SHAPE_OPTIONS = {
@@ -71,8 +74,13 @@ export const resetShapes = () => {
 };
 
 export const updateShapes = () => {
+    /** @type {Shape} */
     // @ts-ignore
-    shapes.push(shapes.shift());
-    initShape(shapes[2]);
+    const shiftingShape = shapes.shift();
+    shapes.push(shiftingShape);
+    initShape(shiftingShape);
     updateShape(2);
+    if (Math.random() <= COIN_RATE) {
+        addCoin(shiftingShape.position.x, shiftingShape.bounds.top + COIN_OFFSET_Y);
+    }
 };
