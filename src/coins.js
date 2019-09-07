@@ -25,7 +25,7 @@ export const addCoin = (x, y) => {
     const coin = coinPool.get();
     coin.moveTo(x, y);
     const clear = () => {
-        addBonus();
+        addBonus(x, y);
         coin.off('collision', clear);
         coin.off('didUpdate', onDidUpdate);
         mainScene.remove(coin);

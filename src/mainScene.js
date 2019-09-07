@@ -24,15 +24,13 @@ let player;
 
 mainScene.on('enter', () => {
     player = getPlayer();
-    // @ts-ignore
-    mainScene.objects = mainScene.objects.filter(object => object.tag !== 'coin');
-    mainScene.objects.unshift(player);
+    mainScene.objects = [player].concat(shapes);
+    mainScene.attachments = [
+        scoreText,
+        hiText,
+    ];
 }).on('exit', () => {
     mainScene.remove(player);
-});
-
-shapes.forEach(shape => {
-    mainScene.add(shape);
 });
 
 const scoreText = new Text({
@@ -44,7 +42,6 @@ const scoreText = new Text({
         textBaseline: 'top',
     },
 });
-mainScene.attach(scoreText);
 
 const hiText = new Text({
     position: Vector.of(0, bounds.top + 60),
@@ -55,7 +52,6 @@ const hiText = new Text({
         textBaseline: 'top',
     },
 });
-mainScene.attach(hiText);
 
 const endButton = new Rectangle({
     interactive: true,
@@ -98,8 +94,6 @@ const gainText = new Text({
 
 mainScene.on('enter', () => {
     mainScene.fps = FPS_HI;
-    mainScene.detach(endButton);
-    mainScene.detach(gainText);
     mainScene.effects.forEach(effect => {
         if (effect instanceof HE.Transition) {
             effect.finish();
