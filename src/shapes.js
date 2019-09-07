@@ -14,7 +14,7 @@ const COUNT = 3,
     MIN_Y = 30,
     MAX_Y = 100,
     COIN_OFFSET_Y = -50,
-    COIN_RATE = .25;
+    COIN_RATE = .20;
 
 /** @type {HE.ShapeOptions} */
 const SHAPE_OPTIONS = {
