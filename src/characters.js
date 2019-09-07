@@ -32,7 +32,7 @@ export const CHARACTERS = [
         }),
     },
     {
-        price: 500,
+        price: 666,
         shape: new HE.Rectangle({
             ...COMMON_OPTIONS,
             width: SIZE * 2,
@@ -45,7 +45,7 @@ export const CHARACTERS = [
         }),
     },
     {
-        price: 1000,
+        price: 1666,
         shape: new HE.Polygon({
             ...COMMON_OPTIONS,
             vertices: HE.Vertices.createPolygon(8, SIZE, Math.PI / 8),
@@ -56,7 +56,7 @@ export const CHARACTERS = [
         }),
     },
     {
-        price: 1500,
+        price: 1999,
         shape: new HE.Rectangle({
             ...COMMON_OPTIONS,
             width: SIZE * 2,
