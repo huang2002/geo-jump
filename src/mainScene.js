@@ -60,8 +60,11 @@ const endButton = new Rectangle({
     height: 40,
     radius: 6,
     style: {
+        fillStyle: SCENE_BACKGROUND,
         strokeStyle: '#090',
         lineWidth: 3,
+        shadowColor: '#000',
+        shadowOffsetY: 5,
     },
     attachments: [
         new Text({
