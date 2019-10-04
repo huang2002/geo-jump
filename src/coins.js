@@ -25,18 +25,20 @@ export const addCoin = (x, y) => {
     const coin = coinPool.get();
     coin.moveTo(x, y);
     const clear = () => {
-        addBonus(x, y);
-        coin.off('collision', clear);
+        coin.off('collision', onCollision);
         coin.off('didUpdate', onDidUpdate);
         mainScene.remove(coin);
         coinPool.add(coin);
+    }, onCollision = () => {
+        addBonus(x, y);
+        clear();
     }, onDidUpdate = () => {
         // @ts-ignore
         if (coin.bounds.right < bounds.left + mainScene.camera.position.x) {
             clear();
         }
     };
-    coin.on('collision', clear)
+    coin.on('collision', onCollision)
         .on('didUpdate', onDidUpdate);
     mainScene.add(coin);
 };
