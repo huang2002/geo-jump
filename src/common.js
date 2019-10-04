@@ -24,8 +24,8 @@ export const SCENE_BACKGROUND = renderer.context.createLinearGradient(0, bounds.
     FRICTION = .8,
     STATIC_FRICTION = .85;
 
-SCENE_BACKGROUND.addColorStop(0, '#222');
-SCENE_BACKGROUND.addColorStop(1, '#111');
+SCENE_BACKGROUND.addColorStop(0, '#111');
+SCENE_BACKGROUND.addColorStop(1, '#112');
 
 const COLORS = ['#F0C', '#F00', '#F60', '#FF0', '#9F0',
     '#090', '#0F0', '#0F9', '#06F', '#C0F'];
