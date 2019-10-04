@@ -1,4 +1,4 @@
-import { PLAYER_CATEGORY, bounds, MAIN_SCENE_SHADOW_COLOR, MAIN_SCENE_LINE_WIDTH } from "./common.js";
+import { PLAYER_CATEGORY, bounds, MAIN_SCENE_LINE_WIDTH } from "./common.js";
 import { mainScene } from "./mainScene.js";
 import { addBonus } from "./player.js";
 
@@ -10,8 +10,6 @@ const coinPool = new HE.Pool(HE.Circle, {
     style: {
         strokeStyle: '#FF0',
         lineWidth: MAIN_SCENE_LINE_WIDTH,
-        shadowColor: MAIN_SCENE_SHADOW_COLOR,
-        shadowOffsetY: MAIN_SCENE_LINE_WIDTH,
     },
 });
 

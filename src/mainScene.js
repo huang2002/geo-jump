@@ -62,8 +62,6 @@ const endButton = new Rectangle({
     style: {
         strokeStyle: '#090',
         lineWidth: 3,
-        shadowColor: '#000',
-        shadowOffsetY: 2,
     },
     attachments: [
         new Text({
@@ -72,8 +70,6 @@ const endButton = new Rectangle({
                 font: 'bold 18px Consolas',
                 strokeStyle: null,
                 fillStyle: '#0D0',
-                shadowColor: '#000',
-                shadowOffsetY: 2,
             },
         })
     ],
@@ -87,8 +83,6 @@ const gainText = new Text({
         font: 'bold 20px Consolas',
         strokeStyle: null,
         fillStyle: '#F90',
-        shadowColor: '#000',
-        shadowOffsetY: 2,
     },
 });
 

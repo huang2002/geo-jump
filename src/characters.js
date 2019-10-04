@@ -1,6 +1,5 @@
 import {
-    PLAYER_CATEGORY, ELASTICITY, FRICTION, STATIC_FRICTION,
-    MAIN_SCENE_LINE_WIDTH, MAIN_SCENE_SHADOW_COLOR
+    PLAYER_CATEGORY, ELASTICITY, FRICTION, STATIC_FRICTION, MAIN_SCENE_LINE_WIDTH
 } from "./common.js";
 
 export const SIZE = 20;
@@ -15,8 +14,6 @@ const COMMON_OPTIONS = {
     fillFirst: false,
 }, COMMON_STYLE = {
     lineWidth: MAIN_SCENE_LINE_WIDTH,
-    shadowColor: MAIN_SCENE_SHADOW_COLOR,
-    shadowOffsetY: MAIN_SCENE_LINE_WIDTH,
 };
 
 export const CHARACTERS = [

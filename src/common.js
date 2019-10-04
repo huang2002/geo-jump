@@ -20,7 +20,6 @@ export const SCENE_BACKGROUND = renderer.context.createLinearGradient(0, bounds.
     BOMB_CATEGORY = Category.for('bomb'),
     SHAPE_CATEGORY = Category.for('shape'),
     MAIN_SCENE_LINE_WIDTH = 4,
-    MAIN_SCENE_SHADOW_COLOR = '#002',
     ELASTICITY = 0.1,
     FRICTION = .8,
     STATIC_FRICTION = .85;
