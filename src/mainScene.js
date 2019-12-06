@@ -57,7 +57,7 @@ const hiText = new Text({
 });
 
 const hintText = new Text({
-    position: Vector.of(0, bounds.bottom - 45),
+    position: Vector.of(0, 200),
     content: CONTENT.HINT,
     style: {
         font: 'bold 20px Consolas',
@@ -118,7 +118,6 @@ mainScene.on('enter', () => {
         const { x } = player.position;
         updateScore(
             camera.position.x =
-            hintText.position.x =
             hiText.position.x =
             scoreText.position.x = x
         );
