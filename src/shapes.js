@@ -30,7 +30,7 @@ const SHAPE_OPTIONS = {
     },
 };
 
-/** @typedef {Rectangle} Shape */
+/** @typedef {HE.Rectangle} Shape */
 
 /** @type {Shape[]} */
 export const shapes = [];

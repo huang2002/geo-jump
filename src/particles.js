@@ -6,7 +6,7 @@ const COUNT = 20,
     LIFE = 1500,
     SIZE = 8;
 
-/** @typedef {Rectangle} Particle */
+/** @typedef {HE.Rectangle} Particle */
 
 /** @type {HE.Pool<HE.Particles<Particle>, Readonly<HE.ParticlesOptions<Particle>>>} */
 const particlesPool = new HE.Pool(HE.Particles, {

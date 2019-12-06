@@ -22,8 +22,8 @@ const bombPool = new HE.Pool(HE.Rectangle, {
 
 /**
  * @param {HE.Scene} scene
- * @param {Vector} position
- * @param {Vector} direction
+ * @param {HE.Vector} position
+ * @param {HE.Vector} direction
  */
 export const createBomb = (scene, position, direction) => {
     const bomb = bombPool.get(),
