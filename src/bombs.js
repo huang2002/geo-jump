@@ -4,8 +4,8 @@ import { getPlayer } from "./player.js";
 
 const SPEED = 35,
     SIZE = 10,
-    MAX_EFFECT = 22,
-    EFFECT_COEFFICIENT = 19;
+    MAX_EFFECT = 25,
+    EFFECT_COEFFICIENT = 18;
 
 const bombPool = new HE.Pool(HE.Rectangle, {
     active: true,
