@@ -22,7 +22,11 @@ export const SCENE_BACKGROUND = renderer.context.createLinearGradient(0, bounds.
     MAIN_SCENE_LINE_WIDTH = 4,
     ELASTICITY = 0.05,
     FRICTION = .91,
-    STATIC_FRICTION = .91;
+    STATIC_FRICTION = .91,
+    COMMON_SHADOW = {
+        shadowColor: '#013',
+        shadowOffsetY: 3,
+    };
 
 SCENE_BACKGROUND.addColorStop(0, '#111');
 SCENE_BACKGROUND.addColorStop(1, '#112');

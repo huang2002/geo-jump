@@ -1,6 +1,6 @@
 import {
     SHAPE_CATEGORY, PLAYER_CATEGORY, BOMB_CATEGORY, MAIN_SCENE_LINE_WIDTH,
-    Rectangle, getRandomColor, Utils, FRICTION, STATIC_FRICTION, ELASTICITY
+    Rectangle, getRandomColor, Utils, FRICTION, STATIC_FRICTION, ELASTICITY, COMMON_SHADOW
 } from "./common.js";
 import { addCoin } from "./coins.js";
 
@@ -26,6 +26,7 @@ const SHAPE_OPTIONS = {
     staticFriction: STATIC_FRICTION,
     fillFirst: false,
     style: {
+        ...COMMON_SHADOW,
         lineWidth: MAIN_SCENE_LINE_WIDTH,
     },
 };
