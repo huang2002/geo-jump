@@ -20,7 +20,8 @@ export const mainScene = engine.createScene({
 });
 
 /** @type {ReturnType<typeof getPlayer>} */
-let player;
+let player,
+    hintIsShown = false;
 
 mainScene.on('enter', () => {
     player = getPlayer();
@@ -28,7 +29,9 @@ mainScene.on('enter', () => {
     mainScene.attachments = [
         scoreText,
         hiText,
+        hintText,
     ];
+    hintIsShown = true;
 }).on('exit', () => {
     mainScene.remove(player);
 });
@@ -50,6 +53,17 @@ const hiText = new Text({
         strokeStyle: null,
         fillStyle: '#0CF',
         textBaseline: 'top',
+    },
+});
+
+const hintText = new Text({
+    position: Vector.of(0, bounds.bottom - 45),
+    content: CONTENT.HINT,
+    style: {
+        font: 'bold 20px Consolas',
+        strokeStyle: null,
+        fillStyle: '#445',
+        textAlign: 'right',
     },
 });
 
@@ -104,6 +118,7 @@ mainScene.on('enter', () => {
         const { x } = player.position;
         updateScore(
             camera.position.x =
+            hintText.position.x =
             hiText.position.x =
             scoreText.position.x = x
         );
@@ -144,6 +159,10 @@ const spawnBomb = Utils.throttle(
 engine.pointer.on('click', position => {
     if (!mainScene.active) {
         return;
+    }
+    if (hintIsShown) {
+        hintIsShown = false;
+        mainScene.detach(hintText);
     }
     if (player.active) {
         spawnBomb(position);
