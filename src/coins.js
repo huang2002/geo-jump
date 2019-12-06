@@ -6,7 +6,7 @@ const coinPool = new HE.Pool(HE.Circle, {
     tag: 'coin',
     sensorFilter: PLAYER_CATEGORY,
     collisionFilter: PLAYER_CATEGORY,
-    radius: 18,
+    radius: 19,
     style: {
         strokeStyle: '#FF0',
         lineWidth: MAIN_SCENE_LINE_WIDTH,

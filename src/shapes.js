@@ -5,12 +5,12 @@ import {
 import { addCoin } from "./coins.js";
 
 const COUNT = 3,
-    MIN_WIDTH = 90,
-    MAX_WIDTH = 130,
+    MIN_WIDTH = 100,
+    MAX_WIDTH = 200,
     MIN_HEIGHT = 60,
-    MAX_HEIGHT = 150,
+    MAX_HEIGHT = 120,
     MIN_GAP = 15,
-    MAX_GAP = 60,
+    MAX_GAP = 50,
     MIN_Y = 30,
     MAX_Y = 100,
     COIN_OFFSET_Y = -50,

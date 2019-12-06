@@ -2,10 +2,10 @@ import { BOMB_CATEGORY, SHAPE_CATEGORY, bounds, Vector } from "./common.js";
 import { createParticles } from "./particles.js";
 import { getPlayer } from "./player.js";
 
-const SPEED = 30,
+const SPEED = 35,
     SIZE = 10,
-    MAX_EFFECT = 25,
-    EFFECT_COEFFICIENT = 22;
+    MAX_EFFECT = 22,
+    EFFECT_COEFFICIENT = 19;
 
 const bombPool = new HE.Pool(HE.Rectangle, {
     active: true,
